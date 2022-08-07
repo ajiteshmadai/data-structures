@@ -28,14 +28,18 @@ public class StackImpl implements Stack {
             int size = elements.size();
             return elements.remove(size - 1);
         } else {
-            throw new IllegalStateException("Popping without any element added to stack");
+            throw new StackOverflowError("Popping without any element added to stack");
         }
 
     }
 
     @Override
     public String peek() {
-        return elements.get(size() - 1);
+        if(size() > 0) {
+            return elements.get(size() - 1);
+        }
+        throw new StackOverflowError();
+
     }
 
     @Override

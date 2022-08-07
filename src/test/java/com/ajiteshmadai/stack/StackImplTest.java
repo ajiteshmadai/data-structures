@@ -38,7 +38,7 @@ public class StackImplTest {
     public void testEmptyPop() {
         Stack stack = new StackImpl();
         assertEquals(0, stack.size());
-        assertThrows(IllegalStateException.class, stack::pop);
+        assertThrows(StackOverflowError.class, stack::pop);
 
     }
 
@@ -56,6 +56,9 @@ public class StackImplTest {
         Stack stack = new StackImpl();
         stack.push("123");
         assertEquals("123", stack.peek());
+
+        stack.init();
+        assertThrows(StackOverflowError.class, stack :: peek);
     }
 
 
