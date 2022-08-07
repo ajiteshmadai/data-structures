@@ -8,7 +8,11 @@ public interface Stack {
 
     String pop();
 
+    String peek();
+
     int size();
+
+    boolean isEmpty();
 
     void print();
 

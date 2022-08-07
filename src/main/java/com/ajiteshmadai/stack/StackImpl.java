@@ -27,11 +27,22 @@ public class StackImpl implements Stack {
     }
 
     @Override
+    public String peek() {
+        return elements.get(size() - 1);
+    }
+
+    @Override
     public int size() {
         if (this.elements != null) {
             return elements.size();
         }
         return 0;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return elements == null
+                || elements.isEmpty();
     }
 
     @Override

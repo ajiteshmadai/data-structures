@@ -35,6 +35,21 @@ public class StackImplTest {
 
     }
 
+    @Test
+    public void testIsEmpty() {
+        Stack stack = new StackImpl();
+        assertEquals(true, stack.isEmpty());
+        stack.push("123");
+        assertEquals(false, stack.isEmpty());
+    }
+
+
+    @Test
+    public void testPeek() {
+        Stack stack = new StackImpl();
+        stack.push("123");
+        assertEquals("123", stack.peek());
+    }
 
 
 }
