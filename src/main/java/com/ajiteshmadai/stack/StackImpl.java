@@ -8,18 +8,25 @@ public class StackImpl implements Stack {
 
 
     @Override
+    public void init() {
+        if(size() > 0){
+            elements = new ArrayList<>();
+        }
+    }
+
+    @Override
     public void push(String element) {
-        if (this.elements == null) {
-            this.elements = new ArrayList<>();
+        if (elements == null) {
+            elements = new ArrayList<>();
         }
 
         elements.add(element);
     }
     @Override
     public String pop() {
-        if(this.elements != null) {
-            int size = this.elements.size();
-            return this.elements.remove(size - 1);
+        if(elements != null) {
+            int size = elements.size();
+            return elements.remove(size - 1);
         } else {
             throw new IllegalStateException("Popping without any element added to stack");
         }
@@ -33,7 +40,7 @@ public class StackImpl implements Stack {
 
     @Override
     public int size() {
-        if (this.elements != null) {
+        if (elements != null) {
             return elements.size();
         }
         return 0;
@@ -47,7 +54,7 @@ public class StackImpl implements Stack {
 
     @Override
     public void print() {
-        System.out.println(this.elements);
+        System.out.println(elements);
     }
 
 

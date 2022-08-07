@@ -8,6 +8,13 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class StackImplTest {
 
     @Test
+    public void testInit() {
+        Stack stack = new StackImpl();
+        stack.push("123");
+        stack.init();
+        assertEquals(0, stack.size());
+    }
+    @Test
     public void testPush() {
         Stack stack = new StackImpl();
         stack.push("1");

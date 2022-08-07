@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface Stack {
 
+    void init();
+
     void push(String element);
 
     String pop();
