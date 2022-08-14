@@ -61,5 +61,15 @@ public class StackImplTest {
         assertThrows(StackOverflowError.class, stack :: peek);
     }
 
+    @Test
+    public void testIntegerStack() {
+        Stack<Integer> stack = new StackImpl();
+        stack.push(1);
+        stack.push(2);
+        assertEquals(2, stack.peek());
+
+
+    }
+
 
 }

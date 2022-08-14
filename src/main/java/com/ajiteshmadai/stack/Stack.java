@@ -2,15 +2,15 @@ package com.ajiteshmadai.stack;
 
 import java.util.List;
 
-public interface Stack {
+public interface Stack<T> {
 
     void init();
 
-    void push(String element);
+    void push(T element);
 
-    String pop();
+    T pop();
 
-    String peek();
+    T peek();
 
     int size();
 

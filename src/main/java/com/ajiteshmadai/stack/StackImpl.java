@@ -3,8 +3,8 @@ package com.ajiteshmadai.stack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StackImpl implements Stack {
-    private List<String> elements;
+public class StackImpl<T> implements Stack<T> {
+    private List<T> elements;
 
 
     @Override
@@ -15,7 +15,7 @@ public class StackImpl implements Stack {
     }
 
     @Override
-    public void push(String element) {
+    public void push(T element) {
         if (elements == null) {
             elements = new ArrayList<>();
         }
@@ -23,7 +23,7 @@ public class StackImpl implements Stack {
         elements.add(element);
     }
     @Override
-    public String pop() {
+    public T pop() {
         if(elements != null) {
             int size = elements.size();
             return elements.remove(size - 1);
@@ -34,7 +34,7 @@ public class StackImpl implements Stack {
     }
 
     @Override
-    public String peek() {
+    public T peek() {
         if(size() > 0) {
             return elements.get(size() - 1);
         }
